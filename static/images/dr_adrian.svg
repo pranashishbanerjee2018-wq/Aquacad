@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 600" width="320" height="600" id="svg-adrian">
+  <defs>
+    <linearGradient id="adrian-coat-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14243b" />
+      <stop offset="50%" stop-color="#0f1b2d" />
+      <stop offset="100%" stop-color="#09121f" />
+    </linearGradient>
+    <linearGradient id="adrian-skin-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8d5bb" />
+      <stop offset="100%" stop-color="#e2ba9b" />
+    </linearGradient>
+    <linearGradient id="adrian-hair-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c1a11" />
+      <stop offset="100%" stop-color="#150d09" />
+    </linearGradient>
+    <linearGradient id="badge-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5ff" />
+      <stop offset="100%" stop-color="#0077ff" />
+    </linearGradient>
+    <filter id="adrian-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <g id="adrian-character" filter="url(#adrian-shadow)">
+    <!-- Shadow beneath feet -->
+    <ellipse cx="160" cy="580" rx="90" ry="12" fill="#000000" opacity="0.6"/>
+
+    <!-- Legs & Trousers -->
+    <g id="adrian-legs">
+      <!-- Left leg -->
+      <path d="M 125 350 L 115 540 L 145 540 L 150 350 Z" fill="#0b1320"/>
+      <!-- Right leg -->
+      <path d="M 170 350 L 175 540 L 205 540 L 195 350 Z" fill="#0d1726"/>
+      <!-- Left shoe -->
+      <path d="M 110 535 L 148 535 L 150 555 L 105 555 Z" fill="#050a12"/>
+      <!-- Right shoe -->
+      <path d="M 172 535 L 210 535 L 215 555 L 170 555 Z" fill="#050a12"/>
+    </g>
+
+    <!-- Torso and Lab Coat -->
+    <g id="adrian-torso">
+      <!-- Inner Shirt & Tie -->
+      <path d="M 142 165 L 178 165 L 172 260 L 148 260 Z" fill="#edf2f7"/>
+      <path d="M 158 175 L 162 175 L 164 240 L 156 240 Z" fill="#0088ff"/>
+      <polygon points="160,178 165,188 155,188" fill="#0055aa"/>
+
+      <!-- Tailored Navy Lab Coat -->
+      <path d="M 110 170 C 130 160, 190 160, 210 170 L 225 380 C 205 400, 115 400, 95 380 Z" fill="url(#adrian-coat-grad)"/>
+      <!-- Lapels -->
+      <path d="M 128 165 L 145 250 L 132 255 L 118 172 Z" fill="#1c304d"/>
+      <path d="M 192 165 L 175 250 L 188 255 L 202 172 Z" fill="#1c304d"/>
+
+      <!-- Smart ID Badge -->
+      <rect x="180" y="210" width="28" height="38" rx="3" fill="#0a1626" stroke="#00e5ff" stroke-width="1.2"/>
+      <rect x="184" y="215" width="20" height="14" fill="#00e5ff" opacity="0.3"/>
+      <circle cx="194" cy="222" r="4" fill="#ffffff"/>
+      <rect x="184" y="233" width="20" height="2" fill="#00e5ff"/>
+      <rect x="184" y="238" width="14" height="2" fill="#94a3b8"/>
+
+      <!-- Pocket and Pen -->
+      <line x1="122" y1="230" x2="140" y2="230" stroke="#253e61" stroke-width="2"/>
+      <line x1="126" y1="224" x2="126" y2="233" stroke="#00e5ff" stroke-width="1.5"/>
+    </g>
+
+    <!-- Head and Neck -->
+    <g id="adrian-head-group">
+      <!-- Neck -->
+      <path d="M 148 140 L 172 140 L 174 170 L 146 170 Z" fill="url(#adrian-skin-grad)"/>
+      <path d="M 146 160 L 160 170 L 174 160" fill="none" stroke="#cf9f7e" stroke-width="1.5"/>
+
+      <!-- Head Base -->
+      <path d="M 130 90 C 130 45, 190 45, 190 90 C 190 135, 175 155, 160 155 C 145 155, 130 135, 130 90 Z" fill="url(#adrian-skin-grad)"/>
+
+      <!-- Ears -->
+      <ellipse cx="128" cy="98" rx="6" ry="10" fill="url(#adrian-skin-grad)"/>
+      <ellipse cx="192" cy="98" rx="6" ry="10" fill="url(#adrian-skin-grad)"/>
+
+      <!-- Hair (Short styled dark professional) -->
+      <path d="M 127 82 C 127 50, 145 35, 160 35 C 178 35, 195 50, 193 82 C 185 65, 165 60, 150 64 C 138 68, 132 75, 127 82 Z" fill="url(#adrian-hair-grad)"/>
+      <path d="M 127 82 L 129 98 L 134 94 L 132 80 Z" fill="url(#adrian-hair-grad)"/>
+      <path d="M 193 82 L 191 98 L 186 94 L 188 80 Z" fill="url(#adrian-hair-grad)"/>
+
+      <!-- Groomed Beard & Stubble -->
+      <path d="M 135 105 C 140 148, 180 148, 185 105 C 180 125, 140 125, 135 105 Z" fill="#25160e" opacity="0.6"/>
+
+      <!-- Eyebrows -->
+      <path d="M 138 78 Q 148 74 154 78" stroke="#1f1109" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 166 78 Q 172 74 182 78" stroke="#1f1109" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+      <!-- Eyes & Blinking mechanism -->
+      <g id="adrian-eyes">
+        <!-- Sclera -->
+        <ellipse cx="146" cy="88" rx="6" ry="3.5" fill="#ffffff"/>
+        <ellipse cx="174" cy="88" rx="6" ry="3.5" fill="#ffffff"/>
+        <!-- Iris -->
+        <circle cx="147" cy="88" r="2.4" fill="#2c1a11"/>
+        <circle cx="175" cy="88" r="2.4" fill="#2c1a11"/>
+        <circle cx="147.8" cy="87.2" r="0.8" fill="#ffffff"/>
+        <circle cx="175.8" cy="87.2" r="0.8" fill="#ffffff"/>
+        <!-- Eyelid for blinking (scales Y to 0 or closes) -->
+        <path id="adrian-blink" d="M 139 88 Q 146 84 153 88 M 167 88 Q 174 84 181 88" stroke="#cf9f7e" stroke-width="1.8" fill="none" opacity="0"/>
+      </g>
+
+      <!-- Nose -->
+      <path d="M 158 84 L 162 100 L 157 103 L 163 103" stroke="#c08d6c" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+      <!-- Mouth Group with 5 Visemes -->
+      <g id="adrian-mouth-group">
+        <!-- 1. Rest mouth -->
+        <path id="adrian-mouth-rest" d="M 152 118 Q 160 120 168 118" stroke="#873e23" stroke-width="2.2" fill="none" stroke-linecap="round" />
+        <!-- 2. Vowel A mouth (open) -->
+        <ellipse id="adrian-mouth-vowel-a" cx="160" cy="120" rx="6.5" ry="5.5" fill="#4a1515" stroke="#873e23" stroke-width="1.8" style="display:none;" />
+        <!-- 3. Round O mouth -->
+        <ellipse id="adrian-mouth-round-o" cx="160" cy="120" rx="4.5" ry="5.5" fill="#4a1515" stroke="#873e23" stroke-width="1.8" style="display:none;" />
+        <!-- 4. Wide E mouth -->
+        <path id="adrian-mouth-wide-e" d="M 150 118 Q 160 115 170 118 Q 160 124 150 118 Z" fill="#ffffff" stroke="#873e23" stroke-width="1.8" style="display:none;" />
+        <!-- 5. Mid mouth -->
+        <ellipse id="adrian-mouth-mid" cx="160" cy="119" rx="5.5" ry="3.2" fill="#4a1515" stroke="#873e23" stroke-width="1.8" style="display:none;" />
+      </g>
+    </g>
+
+    <!-- Arms & Hands -->
+    <!-- Left Arm (Explaining / Welcoming gesture) -->
+    <g id="adrian-arm-left">
+      <path d="M 110 178 L 80 260 L 60 330" stroke="#0f1b2d" stroke-width="22" stroke-linecap="round" fill="none"/>
+      <!-- Hand -->
+      <ellipse cx="58" cy="336" rx="9" ry="12" fill="url(#adrian-skin-grad)" transform="rotate(-15 58 336)"/>
+      <path d="M 52 330 Q 42 342 56 348" stroke="#cf9f7e" stroke-width="2" fill="none"/>
+    </g>
+
+    <!-- Right Arm (Pointing / Highlighting gesture) -->
+    <g id="adrian-arm-right">
+      <path id="adrian-arm-right-path" d="M 210 178 L 240 250 L 270 240" stroke="#0f1b2d" stroke-width="22" stroke-linecap="round" fill="none"/>
+      <!-- Pointing Hand -->
+      <g id="adrian-hand-right" transform="translate(265, 230)">
+        <ellipse cx="10" cy="10" rx="9" ry="9" fill="url(#adrian-skin-grad)"/>
+        <!-- Index finger pointing -->
+        <path d="M 16 8 L 34 5" stroke="#e2ba9b" stroke-width="4.5" stroke-linecap="round"/>
+      </g>
+    </g>
+  </g>
+</svg>

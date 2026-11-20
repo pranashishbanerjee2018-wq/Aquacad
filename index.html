@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AQUACARD — The Future of Intelligent Water Purification</title>
+  <meta name="description" content="Academic Conceptual Prototype & Simulation: Multi-Sensor Diagnostics, Explainable AI Water Quality Classification, and MATLAB Scientific Computing.">
+  
+  <!-- Relative Stylesheets for GitHub Pages Compatibility -->
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/animations.css">
+</head>
+<body>
+
+  <!-- MASTER PRESENTATION CONTAINER -->
+  <div id="presentation-container">
+
+    <!-- STAGE ARENA (1920 x 1080 Native Scaling) -->
+    <div id="stage">
+
+      <!-- 1. LABORATORY BACKGROUND LAYER -->
+      <div id="lab-background-layer">
+        <img src="static/images/lab_background.svg" alt="Futuristic Water Research Laboratory" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      </div>
+
+      <!-- 2. DYNAMIC FLUID PARTICLE CANVAS -->
+      <canvas id="fluid-particles-canvas"></canvas>
+
+      <!-- 3. CENTRAL AQUACARD PURIFICATION MACHINE -->
+      <div id="aquacard-machine-layer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" width="100%" height="100%">
+          <defs>
+            <linearGradient id="chassis-grad-ui" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#1e293b" />
+              <stop offset="50%" stop-color="#0f172a" />
+              <stop offset="100%" stop-color="#020617" />
+            </linearGradient>
+            <linearGradient id="metal-accent-ui" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#334155" />
+              <stop offset="50%" stop-color="#64748b" />
+              <stop offset="100%" stop-color="#1e293b" />
+            </linearGradient>
+            <linearGradient id="chamber-glass-ui" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25" />
+              <stop offset="20%" stop-color="#00e5ff" stop-opacity="0.08" />
+              <stop offset="80%" stop-color="#0077ff" stop-opacity="0.12" />
+              <stop offset="100%" stop-color="#ffffff" stop-opacity="0.3" />
+            </linearGradient>
+            <linearGradient id="water-raw-ui" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#a3824c" stop-opacity="0.85" />
+              <stop offset="100%" stop-color="#785d32" stop-opacity="0.85" />
+            </linearGradient>
+            <linearGradient id="water-sediment-ui" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#6ba2a8" stop-opacity="0.8" />
+              <stop offset="100%" stop-color="#40808a" stop-opacity="0.8" />
+            </linearGradient>
+            <linearGradient id="water-carbon-ui" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.85" />
+              <stop offset="100%" stop-color="#0284c7" stop-opacity="0.85" />
+            </linearGradient>
+            <linearGradient id="water-pure-ui" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.9" />
+              <stop offset="100%" stop-color="#00b4d8" stop-opacity="0.95" />
+            </linearGradient>
+            <filter id="uv-glow-ui" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="8" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+          </defs>
+
+          <!-- Shadow -->
+          <ellipse cx="450" cy="620" rx="410" ry="22" fill="#000000" opacity="0.6"/>
+
+          <!-- Base Frame -->
+          <rect x="50" y="520" width="800" height="85" rx="10" fill="url(#chassis-grad-ui)" stroke="#38bdf8" stroke-width="1.8"/>
+          <rect x="70" y="535" width="760" height="15" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+          
+          <circle cx="95" cy="542" r="4" fill="#00e676" class="status-dot pulse"/>
+          <text x="110" y="546" fill="#94a3b8" font-size="10" font-family="monospace">PUMP A: 4.2 L/min</text>
+          <circle cx="320" cy="542" r="4" fill="#00e5ff"/>
+          <text x="335" y="546" fill="#94a3b8" font-size="10" font-family="monospace">MEMBRANE ΔP: 2.1 psi</text>
+          <circle cx="560" cy="542" r="4" fill="#c084fc"/>
+          <text x="575" y="546" fill="#94a3b8" font-size="10" font-family="monospace">UV DOSE: 42 mJ/cm²</text>
+          <rect x="70" y="565" width="760" height="28" rx="4" fill="#070d18" stroke="#00e5ff" stroke-width="1"/>
+          <text x="450" y="583" fill="#00e5ff" font-size="12" font-family="monospace" font-weight="bold" text-anchor="middle" letter-spacing="3">AQUACARD INTELLIGENT PURIFICATION PLATFORM — Mk IV</text>
+
+          <!-- Top Bracket -->
+          <rect x="50" y="60" width="800" height="40" rx="8" fill="url(#chassis-grad-ui)" stroke="#38bdf8" stroke-width="1.8"/>
+          <text x="95" y="84" fill="#38bdf8" font-size="11" font-family="monospace" font-weight="bold">CLOSED-LOOP DIAGNOSTIC BUS: REAL-TIME FLUIDIC TELEMETRY</text>
+
+          <!-- Structural Pillars -->
+          <rect x="50" y="98" width="30" height="424" fill="url(#metal-accent-ui)" stroke="#475569" stroke-width="1"/>
+          <rect x="820" y="98" width="30" height="424" fill="url(#metal-accent-ui)" stroke="#475569" stroke-width="1"/>
+
+          <!-- CHAMBER 1: Sensor Manifold -->
+          <g id="mach-ch1">
+            <rect x="110" y="95" width="110" height="20" rx="4" fill="#475569"/>
+            <rect x="110" y="475" width="110" height="20" rx="4" fill="#475569"/>
+            <rect x="115" y="115" width="100" height="360" rx="6" fill="#071729" stroke="#334155" stroke-width="1.5"/>
+            <rect id="fluid-chamber-1" x="118" y="140" width="94" height="332" rx="4" fill="url(#water-raw-ui)" class="anim-fluid-wave"/>
+            <rect x="115" y="115" width="100" height="360" rx="6" fill="url(#chamber-glass-ui)"/>
+            
+            <!-- Probes -->
+            <line x1="135" y1="95" x2="135" y2="260" stroke="#00e5ff" stroke-width="3"/>
+            <circle cx="135" cy="260" r="5" fill="#00e5ff"/>
+            <line x1="165" y1="95" x2="165" y2="300" stroke="#ffb300" stroke-width="3"/>
+            <circle cx="165" cy="300" r="6" fill="#ffb300"/>
+            <line x1="195" y1="95" x2="195" y2="340" stroke="#00e676" stroke-width="3"/>
+            <circle cx="195" cy="340" r="5" fill="#00e676"/>
+            
+            <rect x="115" y="498" width="100" height="18" rx="3" fill="#0a182c" stroke="#ffb300" stroke-width="1"/>
+            <text x="165" y="511" fill="#ffb300" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">1. SENSOR MANIFOLD</text>
+          </g>
+
+          <!-- Pipe 1-2 -->
+          <path d="M 215 450 L 260 450" stroke="#00e5ff" stroke-width="8" fill="none" class="pipe-flow-active"/>
+
+          <!-- CHAMBER 2: Sediment Filter -->
+          <g id="mach-ch2">
+            <rect x="260" y="95" width="110" height="20" rx="4" fill="#475569"/>
+            <rect x="260" y="475" width="110" height="20" rx="4" fill="#475569"/>
+            <rect x="265" y="115" width="100" height="360" rx="6" fill="#071729" stroke="#334155" stroke-width="1.5"/>
+            <rect x="268" y="130" width="94" height="342" rx="4" fill="url(#water-sediment-ui)" class="anim-fluid-wave"/>
+            <rect x="285" y="130" width="60" height="342" rx="4" fill="#e2e8f0" opacity="0.9" stroke="#94a3b8" stroke-width="1"/>
+            <line x1="285" y1="180" x2="345" y2="180" stroke="#cbd5e1" stroke-width="2"/>
+            <line x1="285" y1="240" x2="345" y2="240" stroke="#cbd5e1" stroke-width="2"/>
+            <line x1="285" y1="300" x2="345" y2="300" stroke="#cbd5e1" stroke-width="2"/>
+            <line x1="285" y1="360" x2="345" y2="360" stroke="#cbd5e1" stroke-width="2"/>
+            <circle cx="275" cy="220" r="3" fill="#785d32"/>
+            <circle cx="278" cy="310" r="3" fill="#785d32"/>
+            <rect x="265" y="115" width="100" height="360" rx="6" fill="url(#chamber-glass-ui)"/>
+            <rect x="265" y="498" width="100" height="18" rx="3" fill="#0a182c" stroke="#38bdf8" stroke-width="1"/>
+            <text x="315" y="511" fill="#38bdf8" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">2. SEDIMENT (5µm)</text>
+          </g>
+
+          <!-- Pipe 2-3 -->
+          <path d="M 365 140 L 410 140" stroke="#38bdf8" stroke-width="8" fill="none" class="pipe-flow-active"/>
+
+          <!-- CHAMBER 3: Active Carbon -->
+          <g id="mach-ch3">
+            <rect x="410" y="95" width="110" height="20" rx="4" fill="#475569"/>
+            <rect x="410" y="475" width="110" height="20" rx="4" fill="#475569"/>
+            <rect x="415" y="115" width="100" height="360" rx="6" fill="#071729" stroke="#334155" stroke-width="1.5"/>
+            <rect x="418" y="130" width="94" height="342" rx="4" fill="url(#water-carbon-ui)" class="anim-fluid-wave"/>
+            <rect x="435" y="130" width="60" height="342" rx="4" fill="#18181b" stroke="#27272a" stroke-width="1.5"/>
+            <circle cx="450" cy="180" r="2" fill="#3f3f46"/>
+            <circle cx="475" cy="220" r="2" fill="#3f3f46"/>
+            <circle cx="455" cy="270" r="2" fill="#3f3f46"/>
+            <circle cx="480" cy="330" r="2" fill="#3f3f46"/>
+            <rect x="435" y="130" width="60" height="342" rx="4" fill="#00e5ff" opacity="0.1"/>
+            <rect x="415" y="115" width="100" height="360" rx="6" fill="url(#chamber-glass-ui)"/>
+            <rect x="415" y="498" width="100" height="18" rx="3" fill="#0a182c" stroke="#38bdf8" stroke-width="1"/>
+            <text x="465" y="511" fill="#38bdf8" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">3. ACTIVE CARBON</text>
+          </g>
+
+          <!-- Pipe 3-4 with AI 3-Way Valve -->
+          <path d="M 515 450 L 560 450" stroke="#00e5ff" stroke-width="8" fill="none" class="pipe-flow-active"/>
+          <circle cx="538" cy="450" r="10" fill="#0f172a" stroke="#00e5ff" stroke-width="2"/>
+          <polygon points="534,444 544,450 534,456" fill="#00e5ff"/>
+
+          <!-- CHAMBER 4: Dynamic RO / UF Membrane -->
+          <g id="mach-ch4">
+            <rect x="560" y="95" width="110" height="20" rx="4" fill="#475569"/>
+            <rect x="560" y="475" width="110" height="20" rx="4" fill="#475569"/>
+            <rect x="565" y="115" width="100" height="360" rx="6" fill="#071729" stroke="#334155" stroke-width="1.5"/>
+            <rect x="568" y="130" width="94" height="342" rx="4" fill="url(#water-pure-ui)" class="anim-fluid-wave"/>
+            <rect x="585" y="130" width="60" height="342" rx="20" fill="#0284c7" opacity="0.75" stroke="#38bdf8" stroke-width="1.5"/>
+            <ellipse cx="615" cy="180" rx="25" ry="8" fill="none" stroke="#bae6fd" stroke-width="1.5"/>
+            <ellipse cx="615" cy="240" rx="25" ry="8" fill="none" stroke="#bae6fd" stroke-width="1.5"/>
+            <ellipse cx="615" cy="300" rx="25" ry="8" fill="none" stroke="#bae6fd" stroke-width="1.5"/>
+            <ellipse cx="615" cy="360" rx="25" ry="8" fill="none" stroke="#bae6fd" stroke-width="1.5"/>
+            <rect x="565" y="115" width="100" height="360" rx="6" fill="url(#chamber-glass-ui)"/>
+            <rect x="565" y="498" width="100" height="18" rx="3" fill="#0a182c" stroke="#00e5ff" stroke-width="1"/>
+            <text x="615" y="511" fill="#00e5ff" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">4. RO / UF MEMBRANE</text>
+          </g>
+
+          <!-- Pipe 4-5 -->
+          <path d="M 665 140 L 710 140" stroke="#00e5ff" stroke-width="8" fill="none" class="pipe-flow-active"/>
+
+          <!-- CHAMBER 5: Germicidal UV Reactor -->
+          <g id="mach-ch5">
+            <rect x="710" y="95" width="110" height="20" rx="4" fill="#475569"/>
+            <rect x="710" y="475" width="110" height="20" rx="4" fill="#475569"/>
+            <rect x="715" y="115" width="100" height="360" rx="6" fill="#071729" stroke="#334155" stroke-width="1.5"/>
+            <rect x="718" y="130" width="94" height="342" rx="4" fill="url(#water-pure-ui)" class="anim-fluid-wave"/>
+            <rect x="750" y="130" width="30" height="342" rx="10" fill="#a855f7" filter="url(#uv-glow-ui)" class="anim-uv-active"/>
+            <rect x="756" y="130" width="18" height="342" rx="6" fill="#f3e8ff" opacity="0.95"/>
+            <line x1="740" y1="200" x2="725" y2="200" stroke="#c084fc" stroke-width="2" stroke-dasharray="3,3"/>
+            <line x1="790" y1="200" x2="805" y2="200" stroke="#c084fc" stroke-width="2" stroke-dasharray="3,3"/>
+            <line x1="740" y1="280" x2="725" y2="280" stroke="#c084fc" stroke-width="2" stroke-dasharray="3,3"/>
+            <line x1="790" y1="280" x2="805" y2="280" stroke="#c084fc" stroke-width="2" stroke-dasharray="3,3"/>
+            <rect x="715" y="115" width="100" height="360" rx="6" fill="url(#chamber-glass-ui)"/>
+            <rect x="715" y="498" width="100" height="18" rx="3" fill="#0a182c" stroke="#c084fc" stroke-width="1"/>
+            <text x="765" y="511" fill="#c084fc" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">5. UV REACTOR (254nm)</text>
+          </g>
+
+          <!-- Outlet -->
+          <path d="M 815 450 L 865 450 L 865 490" stroke="#00e5ff" stroke-width="10" fill="none" class="pipe-flow-active"/>
+          <polygon points="860,490 870,490 865,502" fill="#00e5ff"/>
+        </svg>
+      </div>
+
+      <!-- 4. TWO INVENTORS / RESEARCHERS (INLINE SVG FOR DIRECT DOM KINEMATICS) -->
+      <div id="characters-container">
+
+        <!-- INVENTOR A: DR. ADRIAN REYNOLDS (Left) -->
+        <div id="character-adrian" class="anim-breath-adrian">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 600" width="100%" height="100%">
+            <defs>
+              <linearGradient id="adr-coat-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#14243b" />
+                <stop offset="50%" stop-color="#0f1b2d" />
+                <stop offset="100%" stop-color="#09121f" />
+              </linearGradient>
+              <linearGradient id="adr-skin-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#f8d5bb" />
+                <stop offset="100%" stop-color="#e2ba9b" />
+              </linearGradient>
+              <linearGradient id="adr-hair-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#2c1a11" />
+                <stop offset="100%" stop-color="#150d09" />
+              </linearGradient>
+            </defs>
+            <ellipse cx="160" cy="580" rx="90" ry="12" fill="#000000" opacity="0.6"/>
+
+            <!-- Legs -->
+            <path d="M 125 350 L 115 540 L 145 540 L 150 350 Z" fill="#0b1320"/>
+            <path d="M 170 350 L 175 540 L 205 540 L 195 350 Z" fill="#0d1726"/>
+            <path d="M 110 535 L 148 535 L 150 555 L 105 555 Z" fill="#050a12"/>
+            <path d="M 172 535 L 210 535 L 215 555 L 170 555 Z" fill="#050a12"/>
+
+            <!-- Torso -->
+            <path d="M 142 165 L 178 165 L 172 260 L 148 260 Z" fill="#edf2f7"/>
+            <path d="M 158 175 L 162 175 L 164 240 L 156 240 Z" fill="#0088ff"/>
+            <polygon points="160,178 165,188 155,188" fill="#0055aa"/>
+            <path d="M 110 170 C 130 160, 190 160, 210 170 L 225 380 C 205 400, 115 400, 95 380 Z" fill="url(#adr-coat-grad)"/>
+            <path d="M 128 165 L 145 250 L 132 255 L 118 172 Z" fill="#1c304d"/>
+            <path d="M 192 165 L 175 250 L 188 255 L 202 172 Z" fill="#1c304d"/>
+
+            <!-- ID Badge -->
+            <rect x="180" y="210" width="28" height="38" rx="3" fill="#0a1626" stroke="#00e5ff" stroke-width="1.2"/>
+            <rect x="184" y="215" width="20" height="14" fill="#00e5ff" opacity="0.3"/>
+            <circle cx="194" cy="222" r="4" fill="#ffffff"/>
+            <rect x="184" y="233" width="20" height="2" fill="#00e5ff"/>
+
+            <!-- Head Group -->
+            <g id="adrian-head-group">
+              <path d="M 148 140 L 172 140 L 174 170 L 146 170 Z" fill="url(#adr-skin-grad)"/>
+              <path d="M 130 90 C 130 45, 190 45, 190 90 C 190 135, 175 155, 160 155 C 145 155, 130 135, 130 90 Z" fill="url(#adr-skin-grad)"/>
+              <ellipse cx="128" cy="98" rx="6" ry="10" fill="url(#adr-skin-grad)"/>
+              <ellipse cx="192" cy="98" rx="6" ry="10" fill="url(#adr-skin-grad)"/>
+              
+              <!-- Hair & Groomed Beard -->
+              <path d="M 127 82 C 127 50, 145 35, 160 35 C 178 35, 195 50, 193 82 C 185 65, 165 60, 150 64 C 138 68, 132 75, 127 82 Z" fill="url(#adr-hair-grad)"/>
+              <path d="M 135 105 C 140 148, 180 148, 185 105 C 180 125, 140 125, 135 105 Z" fill="#25160e" opacity="0.6"/>
+
+              <!-- Eyebrows & Eyes -->
+              <path d="M 138 78 Q 148 74 154 78" stroke="#1f1109" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M 166 78 Q 172 74 182 78" stroke="#1f1109" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <g id="adrian-eyes">
+                <ellipse cx="146" cy="88" rx="6" ry="3.5" fill="#ffffff"/>
+                <ellipse cx="174" cy="88" rx="6" ry="3.5" fill="#ffffff"/>
+                <circle cx="147" cy="88" r="2.4" fill="#2c1a11"/>
+                <circle cx="175" cy="88" r="2.4" fill="#2c1a11"/>
+                <path id="adrian-blink" d="M 139 88 Q 146 84 153 88 M 167 88 Q 174 84 181 88" stroke="#cf9f7e" stroke-width="1.8" fill="none" opacity="0"/>
+              </g>
+              <path d="M 158 84 L 162 100 L 157 103 L 163 103" stroke="#c08d6c" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+              <!-- 5 DISTINCT PHONEME VISEMES -->
+              <g id="adrian-mouth-group">
+                <path id="adrian-mouth-rest" d="M 152 118 Q 160 120 168 118" stroke="#873e23" stroke-width="2.2" fill="none" stroke-linecap="round" />
+                <ellipse id="adrian-mouth-vowel-a" cx="160" cy="120" rx="6.5" ry="5.5" fill="#4a1515" stroke="#873e23" stroke-width="1.8" style="display:none;" />
+                <ellipse id="adrian-mouth-round-o" cx="160" cy="120" rx="4.5" ry="5.5" fill="#4a1515" stroke="#873e23" stroke-width="1.8" style="display:none;" />
+                <path id="adrian-mouth-wide-e" d="M 150 118 Q 160 115 170 118 Q 160 124 150 118 Z" fill="#ffffff" stroke="#873e23" stroke-width="1.8" style="display:none;" />
+                <ellipse id="adrian-mouth-mid" cx="160" cy="119" rx="5.5" ry="3.2" fill="#4a1515" stroke="#873e23" stroke-width="1.8" style="display:none;" />
+              </g>
+            </g>
+
+            <!-- Arms -->
+            <g id="adrian-arm-left">
+              <path d="M 110 178 L 80 260 L 60 330" stroke="#0f1b2d" stroke-width="22" stroke-linecap="round" fill="none"/>
+              <ellipse cx="58" cy="336" rx="9" ry="12" fill="url(#adr-skin-grad)" transform="rotate(-15 58 336)"/>
+            </g>
+            <g id="adrian-arm-right">
+              <path id="adrian-arm-right-path" d="M 210 178 L 240 250 L 270 240" stroke="#0f1b2d" stroke-width="22" stroke-linecap="round" fill="none"/>
+              <g id="adrian-hand-right" transform="translate(265, 230)">
+                <ellipse cx="10" cy="10" rx="9" ry="9" fill="url(#adr-skin-grad)"/>
+                <path d="M 16 8 L 34 5" stroke="#e2ba9b" stroke-width="4.5" stroke-linecap="round"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <!-- INVENTOR B: ETHAN CARTER (Right) -->
+        <div id="character-ethan" class="anim-breath-ethan">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 600" width="100%" height="100%">
+            <defs>
+              <linearGradient id="eth-shirt-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#1e56a0" />
+                <stop offset="50%" stop-color="#163172" />
+                <stop offset="100%" stop-color="#0e1d42" />
+              </linearGradient>
+              <linearGradient id="eth-skin-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#fbe4d0" />
+                <stop offset="100%" stop-color="#e9caa8" />
+              </linearGradient>
+              <linearGradient id="eth-hair-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#5a331c" />
+                <stop offset="100%" stop-color="#2d170b" />
+              </linearGradient>
+              <linearGradient id="tab-holo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.8" />
+                <stop offset="50%" stop-color="#0077ff" stop-opacity="0.7" />
+                <stop offset="100%" stop-color="#001a40" stop-opacity="0.9" />
+              </linearGradient>
+            </defs>
+            <ellipse cx="160" cy="580" rx="85" ry="12" fill="#000000" opacity="0.6"/>
+
+            <!-- Legs -->
+            <path d="M 128 350 L 120 540 L 148 540 L 152 350 Z" fill="#1b2432"/>
+            <path d="M 168 350 L 172 540 L 200 540 L 192 350 Z" fill="#202b3c"/>
+            <path d="M 115 536 L 150 536 L 152 555 L 110 555 Z" fill="#334155"/>
+            <path d="M 168 536 L 204 536 L 208 555 L 165 555 Z" fill="#334155"/>
+
+            <!-- Torso -->
+            <path d="M 116 172 C 132 165, 188 165, 204 172 L 214 360 C 195 368, 125 368, 106 360 Z" fill="url(#eth-shirt-grad)"/>
+            <polygon points="144,168 160,192 136,182" fill="#2b6cb0"/>
+            <polygon points="176,168 160,192 184,182" fill="#2b6cb0"/>
+            <line x1="160" y1="192" x2="160" y2="355" stroke="#122754" stroke-width="2.5"/>
+
+            <!-- Head Group -->
+            <g id="ethan-head-group">
+              <path d="M 150 144 L 170 144 L 172 172 L 148 172 Z" fill="url(#eth-skin-grad)"/>
+              <path d="M 132 94 C 132 50, 188 50, 188 94 C 188 135, 172 154, 160 154 C 148 154, 132 135, 132 94 Z" fill="url(#eth-skin-grad)"/>
+              <ellipse cx="130" cy="98" rx="5.5" ry="9" fill="url(#eth-skin-grad)"/>
+              <ellipse cx="190" cy="98" rx="5.5" ry="9" fill="url(#eth-skin-grad)"/>
+
+              <path d="M 128 86 C 128 48, 146 36, 160 36 C 176 36, 192 48, 192 86 C 185 70, 168 62, 155 65 C 142 68, 135 76, 128 86 Z" fill="url(#eth-hair-grad)"/>
+              <path d="M 139 79 Q 148 76 154 80" stroke="#3b2010" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+              <path d="M 166 80 Q 172 76 181 79" stroke="#3b2010" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+
+              <!-- Eyes -->
+              <g id="ethan-eyes">
+                <ellipse cx="146" cy="89" rx="6" ry="3.8" fill="#ffffff"/>
+                <ellipse cx="174" cy="89" rx="6" ry="3.8" fill="#ffffff"/>
+                <circle cx="147" cy="89" r="2.5" fill="#5a381e"/>
+                <circle cx="175" cy="89" r="2.5" fill="#5a381e"/>
+                <path id="ethan-blink" d="M 139 89 Q 146 85 153 89 M 167 89 Q 174 85 181 89" stroke="#cf9f7e" stroke-width="1.8" fill="none" opacity="0"/>
+              </g>
+              <path d="M 159 86 L 161 101 L 157 104 L 163 104" stroke="#c08d6c" stroke-width="1.7" fill="none" stroke-linecap="round"/>
+
+              <!-- 5 DISTINCT PHONEME VISEMES -->
+              <g id="ethan-mouth-group">
+                <path id="ethan-mouth-rest" d="M 153 120 Q 160 122 167 120" stroke="#873e23" stroke-width="2.0" fill="none" stroke-linecap="round" />
+                <ellipse id="ethan-mouth-vowel-a" cx="160" cy="121" rx="6.0" ry="5.2" fill="#4a1515" stroke="#873e23" stroke-width="1.8" style="display:none;" />
+                <ellipse id="ethan-mouth-round-o" cx="160" cy="121" rx="4.2" ry="5.2" fill="#4a1515" stroke="#873e23" stroke-width="1.8" style="display:none;" />
+                <path id="ethan-mouth-wide-e" d="M 151 119 Q 160 116 169 119 Q 160 124 151 119 Z" fill="#ffffff" stroke="#873e23" stroke-width="1.8" style="display:none;" />
+                <ellipse id="ethan-mouth-mid" cx="160" cy="120" rx="5.2" ry="3.0" fill="#4a1515" stroke="#873e23" stroke-width="1.8" style="display:none;" />
+              </g>
+            </g>
+
+            <!-- Holographic Diagnostic Tablet -->
+            <g id="ethan-arm-left">
+              <path d="M 116 182 L 95 260 L 130 295" stroke="#163172" stroke-width="20" stroke-linecap="round" fill="none"/>
+              <circle cx="132" cy="298" r="8" fill="url(#eth-skin-grad)"/>
+            </g>
+            <g id="ethan-tablet" class="anim-tablet-glow" transform="translate(110, 240)">
+              <rect x="0" y="0" width="105" height="75" rx="6" fill="url(#tab-holo-grad)" stroke="#00e5ff" stroke-width="1.8"/>
+              <text x="8" y="14" fill="#ffffff" font-size="7" font-family="monospace" font-weight="bold">AQUACARD TELEMETRY</text>
+              <text x="8" y="26" fill="#00e5ff" font-size="6" font-family="monospace">pH: 7.32 | TURB: 0.38</text>
+              <text x="8" y="36" fill="#38bdf8" font-size="6" font-family="monospace">TDS: 52ppm | Q: 4.2L</text>
+              <path d="M 8 58 L 22 52 L 35 60 L 50 48 L 68 55 L 85 45 L 98 52" stroke="#00e5ff" stroke-width="1.5" fill="none"/>
+              <circle cx="98" cy="52" r="2.5" fill="#00e676"/>
+              <rect x="8" y="62" width="45" height="8" rx="2" fill="#00e676" opacity="0.3"/>
+              <text x="12" y="68" fill="#00e676" font-size="5" font-family="sans-serif" font-weight="bold">AI: OPTIMAL</text>
+            </g>
+            <g id="ethan-arm-right">
+              <path id="ethan-arm-right-path" d="M 204 182 L 225 250 L 195 270" stroke="#163172" stroke-width="20" stroke-linecap="round" fill="none"/>
+              <circle cx="193" cy="272" r="8" fill="url(#eth-skin-grad)"/>
+            </g>
+          </svg>
+        </div>
+
+      </div>
+
+      <!-- 5. HUD OVERLAYS & SCIENTIFIC WIDGETS -->
+      <div id="hud-overlay">
+
+        <!-- Top Telemetry Header -->
+        <header class="hud-header">
+          <div class="brand-section">
+            <div class="brand-logo">
+              <svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+            </div>
+            <div class="brand-titles">
+              <h1>AQUACARD</h1>
+              <p>THE FUTURE OF INTELLIGENT WATER PURIFICATION</p>
+            </div>
+          </div>
+
+          <div class="telemetry-status-pills">
+            <div class="telemetry-pill">
+              <div class="status-dot"></div>
+              <span>SYSTEM: ONLINE (Mk-IV)</span>
+            </div>
+            <div class="telemetry-pill">
+              <div class="status-dot active-cyan"></div>
+              <span>AI CLASSIFIER: k-NN (95.83%)</span>
+            </div>
+            <div class="telemetry-pill">
+              <div class="status-dot active-cyan pulse"></div>
+              <span>MATLAB: AquaCard.m COMPUTED</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Scene Badge Indicator -->
+        <div id="scene-badge">
+          <div class="scene-number">SCENE 1 / 7</div>
+          <div class="scene-title">The Global Water Challenge</div>
+        </div>
+
+        <!-- Widget: Sensor Matrix (Scene 3) -->
+        <div id="widget-sensor-matrix" class="hud-widget">
+          <div class="matrix-header">INFLUENT SENSOR TELEMETRY</div>
+          <div class="sensor-row">
+            <span class="sensor-label">pH Level:</span>
+            <span class="sensor-val highlight">6.85 pH (Nominal)</span>
+          </div>
+          <div class="sensor-row">
+            <span class="sensor-label">Turbidity (Nephelometric):</span>
+            <span class="sensor-val" style="color: var(--amber-warning)">24.2 NTU (Elevated)</span>
+          </div>
+          <div class="sensor-row">
+            <span class="sensor-label">Total Dissolved Solids:</span>
+            <span class="sensor-val highlight">680 ppm</span>
+          </div>
+          <div class="sensor-row">
+            <span class="sensor-label">Electrical Conductivity:</span>
+            <span class="sensor-val">1050 µS/cm</span>
+          </div>
+          <div class="sensor-row">
+            <span class="sensor-label">Temperature:</span>
+            <span class="sensor-val">22.4 °C</span>
+          </div>
+          <div class="sensor-row">
+            <span class="sensor-label">Flow Rate:</span>
+            <span class="sensor-val highlight">4.2 L/min</span>
+          </div>
+          <div class="sensor-row">
+            <span class="sensor-label">Filter Differential ΔP:</span>
+            <span class="sensor-val">5.4 psi</span>
+          </div>
+          <div style="margin-top: 10px; font-size: 9px; color: #64748b; font-family: monospace;">
+            *Physical indicators only; does not replace certified potable assay.
+          </div>
+        </div>
+
+        <!-- Widget: Purification Routing Flow (Scene 4) -->
+        <div id="widget-purification-flow" class="hud-widget">
+          <div class="matrix-header">AI PURIFICATION ROUTING PATHWAY</div>
+          <div class="stage-step active">
+            <div class="stage-icon">1</div>
+            <div class="stage-info">
+              <h4>Sediment Filtration (5µm)</h4>
+              <p>Active — Retaining coarse silt & suspended floc (99.1%)</p>
+            </div>
+          </div>
+          <div class="stage-step active">
+            <div class="stage-icon">2</div>
+            <div class="stage-info">
+              <h4>Activated Carbon Bed</h4>
+              <p>Active — Adsorbing chlorine, odours & VOC traces</p>
+            </div>
+          </div>
+          <div class="stage-step active">
+            <div class="stage-icon">3</div>
+            <div class="stage-info">
+              <h4>Dynamic RO / UF Membrane</h4>
+              <p>Engaged — Rejecting dissolved salts & ions (92.4%)</p>
+            </div>
+          </div>
+          <div class="stage-step active">
+            <div class="stage-icon">4</div>
+            <div class="stage-info">
+              <h4>Germicidal UV Chamber</h4>
+              <p>Radiating 254nm — Germicidal pathogen inactivation</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Widget: MATLAB Scientific Panel (Scene 5) -->
+        <div id="widget-matlab-panel" class="hud-widget">
+          <div class="matlab-panel-header">
+            <div>
+              <h3 style="color: var(--cyan-primary); font-size: 14px; font-family: monospace;">MATLAB SCIENTIFIC MONITORING & VERIFICATION ENGINE</h3>
+              <p style="color: #94a3b8; font-size: 11px;">Authentic Experimental Calculations Generated via AquaCard.m</p>
+            </div>
+            <div class="matlab-tabs">
+              <button class="matlab-tab-btn active" data-plot="confusion_matrix">Confusion Matrix</button>
+              <button class="matlab-tab-btn" data-plot="parameter_monitoring">Telemetry Stream</button>
+              <button class="matlab-tab-btn" data-plot="input_output_comparison">Input vs Output</button>
+              <button class="matlab-tab-btn" data-plot="sensor_trend_analysis">Trend Topology</button>
+              <button class="matlab-tab-btn" data-plot="purification_dashboard">Dashboard</button>
+            </div>
+          </div>
+
+          <div class="matlab-view-body">
+            <div class="matlab-img-frame">
+              <img id="matlab-active-img" src="results/matlab_confusion_matrix.png" alt="MATLAB Scientific Visualization">
+            </div>
+            <div class="matlab-details-pane">
+              <div>
+                <h4 id="matlab-plot-title" style="color: #ffffff; font-size: 13px; margin-bottom: 8px;">Supervised k-NN Confusion Matrix</h4>
+                <p id="matlab-plot-desc" style="color: #94a3b8; font-size: 11px; line-height: 1.5; margin-bottom: 16px;">
+                  Quantifies predictive separation across 4 synthetic operational regimes (k=5, Euclidean metric, 144 test samples).
+                </p>
+
+                <div class="stat-box">
+                  <div class="stat-val" id="matlab-stat-accuracy">95.83%</div>
+                  <div class="stat-lbl">Classification Accuracy (Verified)</div>
+                </div>
+
+                <div class="stat-box">
+                  <div class="stat-val" id="matlab-stat-model">k-NN (k=5)</div>
+                  <div class="stat-lbl">Explainable Classifier Architecture</div>
+                </div>
+
+                <div class="stat-box">
+                  <div class="stat-val" id="matlab-stat-samples">480 Samples</div>
+                  <div class="stat-lbl">Synthetic Telemetry Dataset</div>
+                </div>
+              </div>
+
+              <div style="font-size: 9px; color: #64748b; line-height: 1.4; border-top: 1px solid #1e293b; padding-top: 8px;">
+                *Educational simulation results. Precomputed via AquaCard.m / verified baseline engine.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Widget: Predictive Maintenance Alert (Scene 6) -->
+        <div id="widget-predictive-alert">
+          <div class="alert-icon">!</div>
+          <div>
+            <div style="font-size: 13px; font-weight: bold; color: var(--amber-warning); font-family: monospace;">
+              PREDICTIVE MAINTENANCE ALERT: HYDRAULIC RESISTANCE RISING
+            </div>
+            <div style="font-size: 11px; color: #cbd5e1; margin-top: 4px;">
+              Differential pressure ΔP increased to 5.4 psi across Sediment Cartridge (Nominal: 2.2 psi). AI auto-modulating pump speed to maintain 4.2 L/min and scheduling technician backwash cycle.
+            </div>
+          </div>
+        </div>
+
+        <!-- Subtitles Bar -->
+        <div id="subtitle-container">
+          <div id="speaker-tag" class="speaker-tag adrian">DR. ADRIAN REYNOLDS</div>
+          <div id="subtitle-text">Welcome to our laboratory. Across the globe, clean water access faces immense pressure from industrial pollution and climate volatility, while conventional treatment systems operate blindly without telemetry.</div>
+        </div>
+
+        <!-- Presentation Controls Bar -->
+        <div id="controls-bar">
+          <div class="control-group-left">
+            <button id="btn-play-pause" class="ctrl-btn" title="Play / Pause">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <button id="btn-restart" class="ctrl-btn" title="Restart Presentation">
+              <svg viewBox="0 0 24 24"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>
+            </button>
+            <button id="btn-prev-scene" class="ctrl-btn" title="Previous Scene">
+              <svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+            </button>
+            <button id="btn-next-scene" class="ctrl-btn" title="Next Scene">
+              <svg viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+            </button>
+          </div>
+
+          <div class="timeline-container">
+            <div class="timeline-info">
+              <span id="time-current">0:00</span>
+              <span style="font-weight: bold; color: var(--cyan-primary);">TIMELINE (165s TOTAL)</span>
+              <span id="time-total">2:45</span>
+            </div>
+            <div id="progress-track" class="progress-track">
+              <div id="progress-fill" class="progress-fill"></div>
+              <div id="scene-markers" class="scene-markers"></div>
+            </div>
+          </div>
+
+          <div class="control-group-right">
+            <button id="btn-toggle-subtitles" class="ctrl-btn active" title="Toggle Subtitles">
+              <svg viewBox="0 0 24 24"><path d="M19 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm-8 7H7.5V9.5h3.5v1.5zm0 4H7.5v-1.5h3.5v1.5zm6 0h-4.5v-1.5h4.5v1.5zm0-4h-4.5V9.5h4.5v1.5z"/></svg>
+            </button>
+            <button id="btn-toggle-sound" class="ctrl-btn active" title="Toggle Sound / Audio">
+              <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+            </button>
+            <button id="btn-toggle-fullscreen" class="ctrl-btn" title="Toggle Fullscreen">
+              <svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 6. LANDING SCREEN OVERLAY -->
+      <div id="landing-screen">
+        <div class="hero-badge">ACADEMIC CONCEPTUAL PROTOTYPE &amp; SIMULATION</div>
+        <h1 class="hero-title">AQUACARD</h1>
+        <div class="hero-tagline">"Intelligence That Makes Every Drop Count."</div>
+        <p class="hero-description">
+          An interactive academic presentation demonstrating how Artificial Intelligence, multi-parametric sensor diagnostics, automated sequential purification, and MATLAB scientific computing unite to advance smart water monitoring and sustainable management.
+        </p>
+
+        <button id="btn-start-presentation" class="btn-start">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          START PRESENTATION (2m 45s)
+        </button>
+
+        <div class="academic-disclaimer">
+          <strong>IMPORTANT SCIENTIFIC INTEGRITY NOTICE:</strong> This project is an educational conceptual prototype and mathematical simulation. Simulated results do not represent physical manufacturing or real laboratory measurements. Physical sensor readings indicate process trends only; drinking-water safety certification requires formal accredited chemical and microbiological testing.
+        </div>
+      </div>
+
+      <!-- 7. FINAL CONCLUSION SCREEN OVERLAY -->
+      <div id="final-screen">
+        <div class="hero-badge">PRESENTATION CONCLUSION</div>
+        <h1 class="hero-title" style="font-size: 38px;">AQUACARD</h1>
+        <div class="hero-tagline" style="font-size: 22px; color: #fff; margin-bottom: 12px;">
+          "Because the future of clean water begins with intelligent decisions."
+        </div>
+        <div style="font-size: 15px; color: var(--cyan-primary); font-family: monospace; margin-bottom: 24px;">
+          Tagline: Intelligence That Makes Every Drop Count.
+        </div>
+        <p class="hero-description" style="max-width: 680px;">
+          Thank you for joining our demonstration. AQUACARD illustrates how explainable machine learning (k-NN 95.83% accuracy), multi-sensor diagnostics, closed-loop hydraulic control, and verified MATLAB modeling lay the conceptual groundwork for the next generation of resilient water purification systems.
+        </p>
+        <button id="btn-replay-presentation" class="btn-start">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>
+          REPLAY PRESENTATION
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Relative JavaScript Modules for GitHub Pages -->
+  <script src="static/js/speech.js"></script>
+  <script src="static/js/lab_effects.js"></script>
+  <script src="static/js/matlab_viewer.js"></script>
+  <script src="static/js/app.js"></script>
+</body>
+</html>

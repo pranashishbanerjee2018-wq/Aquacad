@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" id="svg-lab-bg">
+  <defs>
+    <!-- Laboratory Ambient Gradient -->
+    <linearGradient id="lab-wall-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="40%" stop-color="#060f1e" />
+      <stop offset="70%" stop-color="#0b1b33" />
+      <stop offset="100%" stop-color="#030816" />
+    </linearGradient>
+
+    <!-- Floor Perspective Gradient -->
+    <linearGradient id="floor-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#081426" />
+      <stop offset="50%" stop-color="#0a182e" />
+      <stop offset="100%" stop-color="#030712" />
+    </linearGradient>
+
+    <!-- Cyan Neon Glow -->
+    <linearGradient id="neon-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="1.0" />
+      <stop offset="100%" stop-color="#0077ff" stop-opacity="0.8" />
+    </linearGradient>
+
+    <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Deep Lab Back Wall -->
+  <rect x="0" y="0" width="1920" height="740" fill="url(#lab-wall-grad)"/>
+
+  <!-- Acoustic Modular Panels on Wall -->
+  <g id="wall-panels" opacity="0.35">
+    <rect x="80" y="80" width="380" height="580" rx="8" fill="#0d1b30" stroke="#1e293b" stroke-width="2"/>
+    <rect x="500" y="80" width="920" height="580" rx="8" fill="#0a172a" stroke="#1e293b" stroke-width="2"/>
+    <rect x="1460" y="80" width="380" height="580" rx="8" fill="#0d1b30" stroke="#1e293b" stroke-width="2"/>
+  </g>
+
+  <!-- Overhead Architectural Light Ribs -->
+  <line x1="80" y1="80" x2="1840" y2="80" stroke="url(#neon-cyan)" stroke-width="3" filter="url(#soft-glow)"/>
+  <line x1="80" y1="660" x2="1840" y2="660" stroke="#00e5ff" stroke-width="2" opacity="0.6"/>
+
+  <!-- Vertical Neon Pillars -->
+  <line x1="80" y1="80" x2="80" y2="660" stroke="#0077ff" stroke-width="2" opacity="0.5"/>
+  <line x1="480" y1="80" x2="480" y2="660" stroke="#00e5ff" stroke-width="1.5" opacity="0.4"/>
+  <line x1="1440" y1="80" x2="1440" y2="660" stroke="#00e5ff" stroke-width="1.5" opacity="0.4"/>
+  <line x1="1840" y1="80" x2="1840" y2="660" stroke="#0077ff" stroke-width="2" opacity="0.5"/>
+
+  <!-- High-Tech Laboratory Floor -->
+  <polygon points="0,740 1920,740 1920,1080 0,1080" fill="url(#floor-grad)"/>
+
+  <!-- Floor Grid Perspective Lines -->
+  <g id="floor-grid" opacity="0.25">
+    <line x1="960" y1="740" x2="960" y2="1080" stroke="#38bdf8" stroke-width="1.5"/>
+    <line x1="960" y1="740" x2="400" y2="1080" stroke="#38bdf8" stroke-width="1.2"/>
+    <line x1="960" y1="740" x2="0" y2="1080" stroke="#38bdf8" stroke-width="1.5"/>
+    <line x1="960" y1="740" x2="1520" y2="1080" stroke="#38bdf8" stroke-width="1.2"/>
+    <line x1="960" y1="740" x2="1920" y2="1080" stroke="#38bdf8" stroke-width="1.5"/>
+
+    <line x1="0" y1="790" x2="1920" y2="790" stroke="#38bdf8" stroke-width="1"/>
+    <line x1="0" y1="860" x2="1920" y2="860" stroke="#38bdf8" stroke-width="1.2"/>
+    <line x1="0" y1="950" x2="1920" y2="950" stroke="#38bdf8" stroke-width="1.5"/>
+  </g>
+
+  <!-- Left Holographic Diagnostic Station (Water Quality Sensor Array) -->
+  <g id="left-holo-station" transform="translate(100, 120)">
+    <rect x="0" y="0" width="340" height="240" rx="8" fill="#061224" stroke="#00e5ff" stroke-width="1.5" opacity="0.85"/>
+    <text x="20" y="30" fill="#00e5ff" font-size="14" font-family="monospace" font-weight="bold">INCOMING TELEMETRY ARRAY</text>
+    <line x1="20" y1="40" x2="320" y2="40" stroke="#00e5ff" stroke-width="1" opacity="0.5"/>
+
+    <!-- Sensor Metrics Grid -->
+    <text x="20" y="65" fill="#94a3b8" font-size="11" font-family="monospace">pH Level:       7.32 (Nominal)</text>
+    <text x="20" y="90" fill="#94a3b8" font-size="11" font-family="monospace">Turbidity:      0.38 NTU</text>
+    <text x="20" y="115" fill="#94a3b8" font-size="11" font-family="monospace">Total Dissolved:52 ppm (RO active)</text>
+    <text x="20" y="140" fill="#94a3b8" font-size="11" font-family="monospace">Conductivity:   88.0 uS/cm</text>
+    <text x="20" y="165" fill="#94a3b8" font-size="11" font-family="monospace">Temperature:    22.1 °C</text>
+    <text x="20" y="190" fill="#94a3b8" font-size="11" font-family="monospace">Flow Rate:      4.2 L/min</text>
+
+    <!-- Status pill -->
+    <rect x="20" y="205" width="300" height="22" rx="4" fill="#00e676" opacity="0.2"/>
+    <text x="170" y="220" fill="#00e676" font-size="10" font-family="monospace" font-weight="bold" text-anchor="middle">STATUS: MULTI-STAGE PURIFICATION NOMINAL</text>
+  </g>
+
+  <!-- Right Holographic Diagnostic Station (MATLAB & AI Decision Engine) -->
+  <g id="right-holo-station" transform="translate(1480, 120)">
+    <rect x="0" y="0" width="340" height="240" rx="8" fill="#061224" stroke="#38bdf8" stroke-width="1.5" opacity="0.85"/>
+    <text x="20" y="30" fill="#38bdf8" font-size="14" font-family="monospace" font-weight="bold">AI PURIFICATION ENGINE</text>
+    <line x1="20" y1="40" x2="320" y2="40" stroke="#38bdf8" stroke-width="1" opacity="0.5"/>
+
+    <text x="20" y="65" fill="#cbd5e1" font-size="11" font-family="monospace">CLASSIFIER: Supervised k-NN (k=5)</text>
+    <text x="20" y="90" fill="#cbd5e1" font-size="11" font-family="monospace">ACCURACY:   95.83% (Verified)</text>
+    <text x="20" y="115" fill="#cbd5e1" font-size="11" font-family="monospace">SEDIMENT:   99.1% Retention</text>
+    <text x="20" y="140" fill="#cbd5e1" font-size="11" font-family="monospace">MEMBRANE:   92.4% Rejection</text>
+    <text x="20" y="165" fill="#cbd5e1" font-size="11" font-family="monospace">UV EXPOSURE:42 mJ/cm² (254nm)</text>
+
+    <rect x="20" y="205" width="300" height="22" rx="4" fill="#00e5ff" opacity="0.2"/>
+    <text x="170" y="220" fill="#00e5ff" font-size="10" font-family="monospace" font-weight="bold" text-anchor="middle">MATLAB AquaCard.m COMPUTED BASELINE</text>
+  </g>
+</svg>

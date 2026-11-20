@@ -1,0 +1,145 @@
+Sample_ID,pH,Turbidity (NTU),TDS (ppm),Conductivity (uS/cm),Temperature (deg C),Flow Rate (L/min),Pressure Diff (psi),True_Class_ID,True_Class_Name,Predicted_Class_ID,Predicted_Class_Name
+TEST_001,10.81,32.63,669.3,1171.4,21.8,0.58,9.88,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_002,7.77,1.59,290.0,908.7,23.4,4.47,2.65,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_003,7.04,1.71,221.1,285.4,19.07,5.12,2.24,0,Normal Operating Range,0,Normal Operating Range
+TEST_004,6.45,3.09,244.7,421.1,20.12,4.71,2.5,0,Normal Operating Range,0,Normal Operating Range
+TEST_005,7.48,6.07,162.7,813.7,23.88,4.17,2.31,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_006,7.82,0.64,193.4,373.5,20.66,4.47,2.53,0,Normal Operating Range,0,Normal Operating Range
+TEST_007,5.91,22.23,729.6,1253.2,31.56,2.38,8.8,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_008,7.0,11.89,191.5,445.7,21.66,4.04,5.98,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_009,5.93,24.86,971.3,1294.6,26.82,1.24,10.09,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_010,8.27,1.55,513.5,599.3,23.55,4.44,2.76,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_011,7.25,3.57,222.2,677.0,19.81,4.94,3.27,1,Elevated Turbidity,0,Normal Operating Range
+TEST_012,5.81,17.47,946.7,1550.0,24.03,2.73,9.69,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_013,6.99,2.36,223.0,493.0,20.63,4.19,2.63,0,Normal Operating Range,0,Normal Operating Range
+TEST_014,6.92,3.19,373.0,374.2,21.02,4.64,2.18,0,Normal Operating Range,0,Normal Operating Range
+TEST_015,6.98,1.27,210.0,293.6,21.24,4.39,2.72,0,Normal Operating Range,0,Normal Operating Range
+TEST_016,7.19,2.52,434.4,719.6,20.82,4.83,2.57,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_017,7.66,3.02,471.3,667.7,22.77,4.11,2.71,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_018,7.52,3.98,213.6,451.2,23.73,5.13,2.29,0,Normal Operating Range,0,Normal Operating Range
+TEST_019,7.17,4.33,296.4,357.3,21.86,5.36,2.22,0,Normal Operating Range,0,Normal Operating Range
+TEST_020,10.9,18.74,954.3,1813.1,27.42,2.86,8.98,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_021,7.7,1.19,556.9,876.5,23.82,3.62,2.46,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_022,7.11,3.22,345.8,351.7,20.75,4.56,3.84,0,Normal Operating Range,0,Normal Operating Range
+TEST_023,10.78,26.31,276.8,1522.3,22.4,1.71,8.11,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_024,7.53,4.83,448.8,493.5,22.76,3.93,2.82,1,Elevated Turbidity,2,Elevated Dissolved Solids
+TEST_025,7.16,3.63,228.5,325.6,20.59,5.16,2.53,0,Normal Operating Range,0,Normal Operating Range
+TEST_026,7.35,7.67,246.6,486.2,20.1,3.47,3.37,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_027,7.71,2.6,223.1,316.6,22.72,4.09,1.43,0,Normal Operating Range,0,Normal Operating Range
+TEST_028,7.61,0.68,293.9,388.9,21.47,5.34,3.11,0,Normal Operating Range,0,Normal Operating Range
+TEST_029,5.93,15.36,636.5,1617.2,24.72,2.2,9.44,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_030,7.25,3.03,168.1,369.3,20.75,4.38,1.92,0,Normal Operating Range,0,Normal Operating Range
+TEST_031,7.52,5.37,291.4,546.1,24.32,5.56,2.71,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_032,7.38,4.61,261.3,263.8,21.83,4.97,2.5,0,Normal Operating Range,0,Normal Operating Range
+TEST_033,7.53,1.15,248.6,587.9,21.01,4.46,2.85,0,Normal Operating Range,0,Normal Operating Range
+TEST_034,7.13,1.95,234.7,455.6,19.57,4.28,1.97,0,Normal Operating Range,0,Normal Operating Range
+TEST_035,8.4,3.84,432.6,786.0,24.93,3.98,2.01,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_036,7.42,7.84,306.2,395.8,20.73,4.59,3.8,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_037,7.57,3.44,272.3,780.0,25.07,4.08,2.73,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_038,5.98,33.78,685.4,1118.3,23.8,1.71,4.84,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_039,7.25,1.34,283.1,354.6,20.11,4.88,2.48,0,Normal Operating Range,0,Normal Operating Range
+TEST_040,7.74,5.99,286.5,988.6,22.05,3.78,2.66,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_041,5.9,13.26,768.1,1113.4,32.73,3.24,4.37,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_042,6.98,1.99,326.8,482.2,20.54,4.59,2.21,0,Normal Operating Range,0,Normal Operating Range
+TEST_043,7.57,3.5,273.1,391.1,21.27,4.48,3.25,0,Normal Operating Range,0,Normal Operating Range
+TEST_044,7.5,7.22,289.8,308.3,22.38,4.31,3.71,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_045,7.37,1.19,285.1,428.4,21.73,3.32,2.05,0,Normal Operating Range,0,Normal Operating Range
+TEST_046,6.77,0.44,247.3,334.8,21.09,4.16,2.23,0,Normal Operating Range,0,Normal Operating Range
+TEST_047,7.43,6.32,314.4,241.5,20.88,4.65,3.97,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_048,5.88,26.85,1243.4,1538.7,29.98,2.18,3.28,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_049,6.72,2.36,359.1,334.3,21.57,4.77,3.38,1,Elevated Turbidity,0,Normal Operating Range
+TEST_050,7.08,7.02,180.9,476.1,23.43,4.79,3.32,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_051,7.22,1.4,216.4,388.9,22.28,5.46,2.82,0,Normal Operating Range,0,Normal Operating Range
+TEST_052,7.16,6.03,476.8,786.8,23.45,4.0,3.14,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_053,7.58,2.21,451.8,810.8,24.33,4.24,2.63,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_054,7.02,8.66,302.7,384.2,22.01,4.42,4.96,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_055,7.54,5.13,294.9,374.4,20.66,4.36,2.41,0,Normal Operating Range,0,Normal Operating Range
+TEST_056,5.78,35.7,920.4,1365.7,29.12,0.73,6.06,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_057,7.01,4.86,377.7,794.6,25.57,4.35,2.82,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_058,8.0,2.93,440.4,732.4,22.29,3.9,3.24,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_059,10.79,32.02,677.1,1162.0,28.3,1.84,6.05,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_060,6.53,9.58,249.8,437.0,21.88,4.33,1.55,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_061,6.48,12.35,263.9,358.6,22.71,3.99,5.89,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_062,8.24,0.6,386.7,974.5,21.53,4.52,3.4,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_063,7.12,1.64,326.4,332.8,22.36,4.79,2.8,0,Normal Operating Range,0,Normal Operating Range
+TEST_064,7.41,3.79,583.5,709.9,20.89,4.92,2.57,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_065,8.18,4.85,568.9,641.9,24.86,4.06,2.33,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_066,7.88,3.2,624.9,813.0,25.68,4.62,3.06,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_067,10.99,14.24,601.1,1879.5,26.36,0.45,7.94,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_068,7.88,13.43,360.4,397.4,22.03,4.26,3.94,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_069,8.11,1.13,248.6,867.7,23.52,4.82,3.06,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_070,10.83,29.15,716.7,1688.2,32.11,2.07,6.93,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_071,7.52,1.91,219.8,416.4,21.14,5.16,2.82,0,Normal Operating Range,0,Normal Operating Range
+TEST_072,6.56,13.37,346.8,428.3,23.06,3.79,5.51,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_073,7.92,0.75,515.6,800.0,25.02,3.93,2.52,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_074,7.45,1.96,517.7,694.9,20.57,4.42,2.74,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_075,10.77,10.59,699.8,1222.6,26.48,0.26,7.88,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_076,10.96,22.29,555.7,1264.9,33.05,3.96,6.46,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_077,5.95,4.99,787.7,1604.0,26.54,2.89,11.95,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_078,7.07,2.02,209.6,511.1,23.14,4.62,2.44,0,Normal Operating Range,0,Normal Operating Range
+TEST_079,10.76,36.57,1116.4,837.4,27.03,1.98,7.25,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_080,10.9,24.67,904.4,1039.0,28.78,2.24,10.03,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_081,7.45,2.63,223.4,356.8,20.92,4.24,2.85,0,Normal Operating Range,0,Normal Operating Range
+TEST_082,5.84,21.29,1200.5,1268.5,22.38,3.17,11.54,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_083,7.08,12.8,243.0,358.9,20.92,5.11,3.07,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_084,8.5,1.23,480.1,575.3,21.27,4.04,2.96,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_085,7.62,2.54,531.6,742.7,23.4,3.87,2.55,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_086,7.15,9.83,295.2,486.2,24.48,5.61,2.78,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_087,7.66,0.77,694.8,498.1,20.42,3.96,4.14,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_088,7.26,0.75,364.3,452.8,21.93,4.87,2.6,0,Normal Operating Range,0,Normal Operating Range
+TEST_089,7.32,5.81,210.4,349.4,20.49,3.84,3.41,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_090,10.81,30.79,902.1,1079.3,30.56,1.8,5.93,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_091,6.7,1.14,214.5,344.5,22.06,5.21,2.2,0,Normal Operating Range,0,Normal Operating Range
+TEST_092,7.1,2.44,329.3,359.8,23.68,3.81,2.08,0,Normal Operating Range,0,Normal Operating Range
+TEST_093,7.17,2.01,259.9,492.9,21.0,4.16,2.35,0,Normal Operating Range,0,Normal Operating Range
+TEST_094,10.63,10.36,824.1,1434.2,27.57,2.4,9.38,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_095,6.93,2.18,210.9,426.6,21.56,4.56,2.25,0,Normal Operating Range,0,Normal Operating Range
+TEST_096,7.65,5.34,418.0,645.5,23.74,4.47,2.89,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_097,7.73,4.36,534.6,782.1,21.86,3.64,2.89,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_098,7.86,3.15,831.3,959.4,23.24,3.84,3.41,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_099,7.08,14.06,261.1,399.2,22.35,3.97,5.49,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_100,7.08,2.78,238.9,269.1,21.9,4.26,2.87,0,Normal Operating Range,0,Normal Operating Range
+TEST_101,7.02,10.54,206.5,515.9,23.26,3.84,3.83,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_102,7.07,2.03,121.2,486.4,21.15,3.91,2.74,1,Elevated Turbidity,0,Normal Operating Range
+TEST_103,7.72,3.36,362.0,837.9,22.35,4.72,2.5,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_104,10.72,29.92,717.1,1198.5,28.2,3.62,11.66,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_105,7.06,2.44,272.6,429.3,23.69,4.37,1.82,0,Normal Operating Range,0,Normal Operating Range
+TEST_106,7.84,3.56,628.2,970.0,23.33,4.94,2.23,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_107,7.27,3.04,188.6,361.6,21.12,5.03,2.83,0,Normal Operating Range,0,Normal Operating Range
+TEST_108,8.4,4.59,512.1,861.6,22.02,3.9,3.06,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_109,6.81,1.36,548.5,672.5,21.9,4.84,3.26,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_110,5.84,30.53,741.5,825.9,26.06,2.56,8.81,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_111,7.05,5.47,237.3,488.2,23.0,4.46,2.49,0,Normal Operating Range,0,Normal Operating Range
+TEST_112,7.17,2.74,472.2,685.5,23.2,4.66,3.43,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_113,7.41,16.62,254.1,516.0,24.17,4.84,3.93,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_114,6.8,4.32,274.1,346.6,21.33,3.75,1.17,1,Elevated Turbidity,0,Normal Operating Range
+TEST_115,6.09,3.78,656.7,1382.8,26.86,2.59,7.33,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_116,6.77,8.42,297.0,438.0,22.36,3.91,3.99,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_117,7.85,1.05,412.8,709.9,20.53,4.5,3.3,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_118,7.27,0.57,691.2,621.2,25.16,3.92,3.79,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_119,6.41,9.04,199.1,437.8,24.04,4.64,3.67,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_120,7.52,2.88,456.6,905.4,23.63,4.75,2.56,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_121,6.85,5.86,402.1,407.5,21.31,3.89,2.52,1,Elevated Turbidity,0,Normal Operating Range
+TEST_122,7.27,3.24,234.9,457.8,22.56,3.98,2.92,0,Normal Operating Range,0,Normal Operating Range
+TEST_123,7.04,13.36,335.9,413.9,20.93,5.32,1.96,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_124,7.31,18.05,360.4,204.3,19.75,3.63,4.89,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_125,7.1,6.29,225.5,433.6,21.0,3.69,4.66,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_126,7.43,1.26,222.5,339.7,20.32,4.01,2.83,0,Normal Operating Range,0,Normal Operating Range
+TEST_127,7.65,9.2,247.3,436.1,23.81,3.51,4.13,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_128,7.25,1.73,199.3,310.4,22.11,4.9,2.44,0,Normal Operating Range,0,Normal Operating Range
+TEST_129,7.29,3.8,269.4,325.0,20.03,4.59,1.96,0,Normal Operating Range,0,Normal Operating Range
+TEST_130,10.77,26.24,1299.3,1136.2,33.29,1.58,6.97,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_131,7.06,3.56,579.1,602.6,24.14,3.56,2.07,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_132,7.04,15.56,267.8,453.3,23.08,4.15,6.44,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_133,6.52,0.99,155.3,519.8,23.77,5.53,2.9,0,Normal Operating Range,0,Normal Operating Range
+TEST_134,7.49,3.91,200.6,279.2,21.38,4.65,1.99,0,Normal Operating Range,0,Normal Operating Range
+TEST_135,6.05,40.11,646.3,596.2,32.55,2.34,8.42,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_136,10.85,29.88,747.1,1171.5,26.3,2.46,8.33,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_137,6.92,11.56,319.5,304.9,22.12,3.91,4.41,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_138,7.61,3.14,242.5,403.0,20.54,5.77,2.66,0,Normal Operating Range,0,Normal Operating Range
+TEST_139,7.39,2.4,374.9,728.8,23.08,4.96,2.52,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_140,10.86,32.79,953.3,1261.8,24.87,1.74,4.55,3,Abnormal Sensor Readings,3,Abnormal Sensor Readings
+TEST_141,6.98,6.64,342.4,595.7,20.99,5.17,4.56,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_142,7.96,4.95,353.9,790.2,21.15,4.26,2.62,2,Elevated Dissolved Solids,2,Elevated Dissolved Solids
+TEST_143,6.75,12.02,365.0,246.3,19.59,5.22,4.09,1,Elevated Turbidity,1,Elevated Turbidity
+TEST_144,7.39,7.6,322.1,403.1,21.91,4.27,4.97,1,Elevated Turbidity,1,Elevated Turbidity

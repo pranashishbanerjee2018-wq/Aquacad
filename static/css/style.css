@@ -1,0 +1,795 @@
+/* ==========================================================================
+   AQUACARD: THE FUTURE OF INTELLIGENT WATER PURIFICATION
+   Academic Conceptual Prototype & Simulation Platform
+   Stylesheet: style.css
+   ========================================================================== */
+
+:root {
+  --bg-primary: #040914;
+  --bg-secondary: #091528;
+  --bg-panel: rgba(11, 23, 40, 0.85);
+  --bg-panel-border: rgba(0, 229, 255, 0.25);
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --cyan-primary: #00e5ff;
+  --cyan-glow: rgba(0, 229, 255, 0.45);
+  --blue-primary: #0077ff;
+  --blue-glow: rgba(0, 119, 255, 0.45);
+  --green-nominal: #00e676;
+  --amber-warning: #ffb300;
+  --red-critical: #ff3d71;
+  --purple-uv: #c084fc;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+}
+
+/* Main Viewport Container (16:9 Aspect Ratio) */
+#presentation-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at 50% 40%, #0d203d 0%, #060e1d 60%, #020611 100%);
+  overflow: hidden;
+}
+
+/* Stage Arena (1920x1080 Scaled) */
+#stage {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  max-width: 100vw;
+  max-height: 100vh;
+  transform-origin: center center;
+  overflow: hidden;
+  background-color: #030816;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+}
+
+/* SVG Laboratory Layers */
+#lab-background-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Fluid Canvas Particle Layer */
+#fluid-particles-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* AQUACARD Machine Layer */
+#aquacard-machine-layer {
+  position: absolute;
+  left: 510px;
+  bottom: 80px;
+  width: 900px;
+  height: 650px;
+  z-index: 10;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+}
+
+/* Characters Container */
+#characters-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+  pointer-events: none;
+}
+
+/* Dr. Adrian Reynolds (Left-Center) */
+#character-adrian {
+  position: absolute;
+  left: 170px;
+  bottom: 60px;
+  width: 330px;
+  height: 620px;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: bottom center;
+}
+
+/* Ethan Carter (Right-Center) */
+#character-ethan {
+  position: absolute;
+  right: 170px;
+  bottom: 60px;
+  width: 330px;
+  height: 620px;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: bottom center;
+}
+
+/* Active Speaker Halo Indicator */
+.speaker-active {
+  filter: drop-shadow(0 0 16px rgba(0, 229, 255, 0.65));
+}
+
+/* HUD Overlay Panels */
+#hud-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  pointer-events: none;
+}
+
+/* Top Telemetry Header */
+.hud-header {
+  position: absolute;
+  top: 24px;
+  left: 36px;
+  right: 36px;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  background: var(--bg-panel);
+  border: 1px solid var(--bg-panel-border);
+  border-radius: 8px;
+  backdrop-filter: blur(12px);
+  pointer-events: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand-logo {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--cyan-primary), var(--blue-primary));
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 12px var(--cyan-glow);
+}
+
+.brand-logo svg {
+  width: 22px;
+  height: 22px;
+  fill: #ffffff;
+}
+
+.brand-titles h1 {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.brand-titles p {
+  font-size: 11px;
+  color: var(--cyan-primary);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.telemetry-status-pills {
+  display: flex;
+  gap: 14px;
+}
+
+.telemetry-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-family: var(--font-mono);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green-nominal);
+  box-shadow: 0 0 8px var(--green-nominal);
+}
+
+.status-dot.active-cyan {
+  background: var(--cyan-primary);
+  box-shadow: 0 0 8px var(--cyan-primary);
+}
+
+.status-dot.pulse {
+  animation: pulse-dot 1.5s infinite;
+}
+
+/* Scene Description Floating Badge */
+#scene-badge {
+  position: absolute;
+  top: 104px;
+  left: 36px;
+  padding: 10px 18px;
+  background: rgba(6, 18, 36, 0.9);
+  border-left: 4px solid var(--cyan-primary);
+  border-top: 1px solid var(--bg-panel-border);
+  border-right: 1px solid var(--bg-panel-border);
+  border-bottom: 1px solid var(--bg-panel-border);
+  border-radius: 0 6px 6px 0;
+  backdrop-filter: blur(8px);
+  pointer-events: auto;
+}
+
+#scene-badge .scene-number {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--cyan-primary);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+#scene-badge .scene-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 2px;
+}
+
+/* Floating Scientific Widgets (Scene Specific HUDs) */
+.hud-widget {
+  position: absolute;
+  background: var(--bg-panel);
+  border: 1px solid var(--bg-panel-border);
+  border-radius: 8px;
+  backdrop-filter: blur(12px);
+  padding: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  pointer-events: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  display: none;
+}
+
+.hud-widget.visible {
+  opacity: 1;
+  transform: translateY(0);
+  display: block;
+}
+
+/* Widget: Sensor Live Matrix (Scene 3) */
+#widget-sensor-matrix {
+  top: 170px;
+  left: 36px;
+  width: 320px;
+}
+
+.matrix-header {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--cyan-primary);
+  font-family: var(--font-mono);
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+  padding-bottom: 6px;
+}
+
+.sensor-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sensor-label {
+  color: var(--text-muted);
+}
+
+.sensor-val {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.sensor-val.highlight {
+  color: var(--cyan-primary);
+}
+
+/* Widget: Purification Routing (Scene 4) */
+#widget-purification-flow {
+  top: 170px;
+  right: 36px;
+  width: 340px;
+}
+
+.stage-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  padding: 8px 10px;
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: 6px;
+  border-left: 3px solid #334155;
+  transition: all 0.3s ease;
+}
+
+.stage-step.active {
+  border-left-color: var(--cyan-primary);
+  background: rgba(0, 229, 255, 0.1);
+}
+
+.stage-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #1e293b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  font-weight: bold;
+  color: var(--cyan-primary);
+}
+
+.stage-info h4 {
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.stage-info p {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+/* Center MATLAB Scientific Panel (Scene 5) */
+#widget-matlab-panel {
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  width: 1080px;
+  background: rgba(6, 13, 23, 0.94);
+  border: 1px solid var(--cyan-primary);
+  border-radius: 12px;
+  padding: 20px;
+  z-index: 30;
+}
+
+#widget-matlab-panel.visible {
+  transform: translateX(-50%) translateY(0);
+}
+
+.matlab-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  border-bottom: 1px solid rgba(0, 229, 255, 0.25);
+  padding-bottom: 10px;
+}
+
+.matlab-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.matlab-tab-btn {
+  background: #0f1e33;
+  border: 1px solid #1e3a5f;
+  color: #94a3b8;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.matlab-tab-btn.active, .matlab-tab-btn:hover {
+  background: var(--cyan-primary);
+  color: #030816;
+  font-weight: bold;
+  border-color: var(--cyan-primary);
+}
+
+.matlab-view-body {
+  display: flex;
+  gap: 20px;
+  height: 480px;
+}
+
+.matlab-img-frame {
+  flex: 1.6;
+  background: #040912;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #1e293b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.matlab-img-frame img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.matlab-details-pane {
+  flex: 1;
+  background: #081424;
+  border-radius: 6px;
+  padding: 16px;
+  border: 1px solid #1e293b;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+}
+
+.stat-box {
+  background: rgba(0, 229, 255, 0.05);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.stat-val {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--cyan-primary);
+}
+
+.stat-lbl {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* Predictive Alert Banner (Scene 6) */
+#widget-predictive-alert {
+  top: 170px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  width: 720px;
+  background: rgba(255, 179, 0, 0.15);
+  border: 2px solid var(--amber-warning);
+  color: #fff;
+  border-radius: 8px;
+  padding: 16px 24px;
+  display: none;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 0 30px rgba(255, 179, 0, 0.3);
+}
+
+#widget-predictive-alert.visible {
+  display: flex;
+  transform: translateX(-50%) translateY(0);
+}
+
+.alert-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--amber-warning);
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Subtitles Bar (Bottom-Center) */
+#subtitle-container {
+  position: absolute;
+  bottom: 84px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72%;
+  min-height: 52px;
+  background: rgba(4, 9, 20, 0.88);
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  border-radius: 8px;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  z-index: 25;
+  transition: opacity 0.3s ease;
+}
+
+.speaker-tag {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.speaker-tag.adrian {
+  background: rgba(0, 119, 255, 0.25);
+  border: 1px solid #0077ff;
+  color: #60a5fa;
+}
+
+.speaker-tag.ethan {
+  background: rgba(0, 229, 255, 0.25);
+  border: 1px solid #00e5ff;
+  color: #38bdf8;
+}
+
+#subtitle-text {
+  font-size: 15px;
+  line-height: 1.4;
+  color: #f8fafc;
+  font-weight: 400;
+}
+
+/* Bottom Presentation Control Bar */
+#controls-bar {
+  position: absolute;
+  bottom: 16px;
+  left: 36px;
+  right: 36px;
+  height: 54px;
+  background: var(--bg-panel);
+  border: 1px solid var(--bg-panel-border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  backdrop-filter: blur(12px);
+  z-index: 30;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.control-group-left, .control-group-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ctrl-btn {
+  background: #0f1d33;
+  border: 1px solid #1e385c;
+  color: #e2e8f0;
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ctrl-btn:hover {
+  background: var(--cyan-primary);
+  color: #030816;
+  border-color: var(--cyan-primary);
+  box-shadow: 0 0 12px var(--cyan-glow);
+}
+
+.ctrl-btn.active {
+  background: #0284c7;
+  color: #fff;
+  border-color: var(--cyan-primary);
+}
+
+.ctrl-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* Timeline & Scrubber */
+.timeline-container {
+  flex: 1;
+  max-width: 650px;
+  margin: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.timeline-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+
+.progress-track {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  background: #1e293b;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--blue-primary), var(--cyan-primary));
+  border-radius: 3px;
+  box-shadow: 0 0 8px var(--cyan-glow);
+}
+
+.scene-markers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.scene-marker {
+  position: absolute;
+  top: -2px;
+  width: 2px;
+  height: 10px;
+  background: #64748b;
+  transform: translateX(-50%);
+}
+
+/* Start / Landing Screen Overlay */
+#landing-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 45%, #0c1b33 0%, #030712 80%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  text-align: center;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  transition: opacity 0.8s ease;
+}
+
+.hero-badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--cyan-primary);
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  font-family: var(--font-mono);
+}
+
+.hero-title {
+  font-size: 44px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 8px;
+  text-shadow: 0 0 25px rgba(0, 229, 255, 0.5);
+}
+
+.hero-tagline {
+  font-size: 20px;
+  color: var(--cyan-primary);
+  font-weight: 400;
+  margin-bottom: 28px;
+  font-style: italic;
+}
+
+.hero-description {
+  max-width: 780px;
+  font-size: 14px;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 36px;
+}
+
+.btn-start {
+  background: linear-gradient(135deg, #00e5ff 0%, #0077ff 100%);
+  color: #020617;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  padding: 16px 42px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-start:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 40px rgba(0, 229, 255, 0.8);
+}
+
+.academic-disclaimer {
+  margin-top: 32px;
+  max-width: 700px;
+  font-size: 11px;
+  color: #64748b;
+  line-height: 1.5;
+  border-top: 1px solid #1e293b;
+  padding-top: 16px;
+}
+
+/* Final Summary Overlay (Scene 7 End) */
+#final-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(3, 8, 18, 0.92);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 80;
+  text-align: center;
+  padding: 40px;
+  backdrop-filter: blur(12px);
+}
+
+#final-screen.visible {
+  display: flex;
+}

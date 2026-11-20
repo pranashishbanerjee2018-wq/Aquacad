@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 600" width="320" height="600" id="svg-ethan">
+  <defs>
+    <linearGradient id="ethan-shirt-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e56a0" />
+      <stop offset="50%" stop-color="#163172" />
+      <stop offset="100%" stop-color="#0e1d42" />
+    </linearGradient>
+    <linearGradient id="ethan-skin-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fbe4d0" />
+      <stop offset="100%" stop-color="#e9caa8" />
+    </linearGradient>
+    <linearGradient id="ethan-hair-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5a331c" />
+      <stop offset="100%" stop-color="#2d170b" />
+    </linearGradient>
+    <linearGradient id="tablet-holo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#0077ff" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#001a40" stop-opacity="0.9" />
+    </linearGradient>
+    <filter id="ethan-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <g id="ethan-character" filter="url(#ethan-shadow)">
+    <!-- Shadow beneath feet -->
+    <ellipse cx="160" cy="580" rx="85" ry="12" fill="#000000" opacity="0.6"/>
+
+    <!-- Legs & Chinos -->
+    <g id="ethan-legs">
+      <!-- Left leg -->
+      <path d="M 128 350 L 120 540 L 148 540 L 152 350 Z" fill="#1b2432"/>
+      <!-- Right leg -->
+      <path d="M 168 350 L 172 540 L 200 540 L 192 350 Z" fill="#202b3c"/>
+      <!-- Left shoe (modern sneakers) -->
+      <path d="M 115 536 L 150 536 L 152 555 L 110 555 Z" fill="#334155"/>
+      <path d="M 110 552 L 152 552 L 152 556 L 110 556 Z" fill="#00e5ff"/>
+      <!-- Right shoe -->
+      <path d="M 168 536 L 204 536 L 208 555 L 165 555 Z" fill="#334155"/>
+      <path d="M 165 552 L 208 552 L 208 556 L 165 556 Z" fill="#00e5ff"/>
+    </g>
+
+    <!-- Torso and Cobalt-Blue Shirt -->
+    <g id="ethan-torso">
+      <!-- Smart Casual Blue Shirt -->
+      <path d="M 116 172 C 132 165, 188 165, 204 172 L 214 360 C 195 368, 125 368, 106 360 Z" fill="url(#ethan-shirt-grad)"/>
+      <!-- Collar -->
+      <polygon points="144,168 160,192 136,182" fill="#2b6cb0"/>
+      <polygon points="176,168 160,192 184,182" fill="#2b6cb0"/>
+      <!-- Button Placket -->
+      <line x1="160" y1="192" x2="160" y2="355" stroke="#122754" stroke-width="2.5"/>
+      <circle cx="160" cy="215" r="2" fill="#93c5fd"/>
+      <circle cx="160" cy="250" r="2" fill="#93c5fd"/>
+      <circle cx="160" cy="285" r="2" fill="#93c5fd"/>
+
+      <!-- High-Tech Wrist Telemetry Link -->
+      <rect x="94" y="278" width="16" height="12" rx="2" fill="#0f172a" stroke="#00e5ff" stroke-width="1.2"/>
+      <circle cx="102" cy="284" r="2" fill="#00e5ff"/>
+    </g>
+
+    <!-- Head and Neck -->
+    <g id="ethan-head-group">
+      <!-- Neck -->
+      <path d="M 150 144 L 170 144 L 172 172 L 148 172 Z" fill="url(#ethan-skin-grad)"/>
+
+      <!-- Head Base (Youthful, clean jawline) -->
+      <path d="M 132 94 C 132 50, 188 50, 188 94 C 188 135, 172 154, 160 154 C 148 154, 132 135, 132 94 Z" fill="url(#ethan-skin-grad)"/>
+
+      <!-- Ears -->
+      <ellipse cx="130" cy="98" rx="5.5" ry="9" fill="url(#ethan-skin-grad)"/>
+      <ellipse cx="190" cy="98" rx="5.5" ry="9" fill="url(#ethan-skin-grad)"/>
+
+      <!-- Hair (Youthful chestnut brown layered) -->
+      <path d="M 128 86 C 128 48, 146 36, 160 36 C 176 36, 192 48, 192 86 C 185 70, 168 62, 155 65 C 142 68, 135 76, 128 86 Z" fill="url(#ethan-hair-grad)"/>
+      <!-- Soft sideburns -->
+      <path d="M 128 86 L 131 100 L 134 96 Z" fill="url(#ethan-hair-grad)"/>
+      <path d="M 192 86 L 189 100 L 186 96 Z" fill="url(#ethan-hair-grad)"/>
+
+      <!-- Eyebrows (Curious, inquisitive) -->
+      <path d="M 139 79 Q 148 76 154 80" stroke="#3b2010" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <path d="M 166 80 Q 172 76 181 79" stroke="#3b2010" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+
+      <!-- Eyes (Hazel, expressive) -->
+      <g id="ethan-eyes">
+        <ellipse cx="146" cy="89" rx="6" ry="3.8" fill="#ffffff"/>
+        <ellipse cx="174" cy="89" rx="6" ry="3.8" fill="#ffffff"/>
+        <circle cx="147" cy="89" r="2.5" fill="#5a381e"/>
+        <circle cx="175" cy="89" r="2.5" fill="#5a381e"/>
+        <circle cx="147.8" cy="88.2" r="0.9" fill="#ffffff"/>
+        <circle cx="175.8" cy="88.2" r="0.9" fill="#ffffff"/>
+        <!-- Eyelid blink line -->
+        <path id="ethan-blink" d="M 139 89 Q 146 85 153 89 M 167 89 Q 174 85 181 89" stroke="#cf9f7e" stroke-width="1.8" fill="none" opacity="0"/>
+      </g>
+
+      <!-- Nose -->
+      <path d="M 159 86 L 161 101 L 157 104 L 163 104" stroke="#c08d6c" stroke-width="1.7" fill="none" stroke-linecap="round"/>
+
+      <!-- Mouth Group with 5 Visemes -->
+      <g id="ethan-mouth-group">
+        <!-- 1. Rest mouth -->
+        <path id="ethan-mouth-rest" d="M 153 120 Q 160 122 167 120" stroke="#873e23" stroke-width="2.0" fill="none" stroke-linecap="round" />
+        <!-- 2. Vowel A mouth -->
+        <ellipse id="ethan-mouth-vowel-a" cx="160" cy="121" rx="6.0" ry="5.2" fill="#4a1515" stroke="#873e23" stroke-width="1.8" style="display:none;" />
+        <!-- 3. Round O mouth -->
+        <ellipse id="ethan-mouth-round-o" cx="160" cy="121" rx="4.2" ry="5.2" fill="#4a1515" stroke="#873e23" stroke-width="1.8" style="display:none;" />
+        <!-- 4. Wide E mouth -->
+        <path id="ethan-mouth-wide-e" d="M 151 119 Q 160 116 169 119 Q 160 124 151 119 Z" fill="#ffffff" stroke="#873e23" stroke-width="1.8" style="display:none;" />
+        <!-- 5. Mid mouth -->
+        <ellipse id="ethan-mouth-mid" cx="160" cy="120" rx="5.2" ry="3.0" fill="#4a1515" stroke="#873e23" stroke-width="1.8" style="display:none;" />
+      </g>
+    </g>
+
+    <!-- Arms & Holographic Diagnostic Tablet -->
+    <!-- Left Arm holding tablet -->
+    <g id="ethan-arm-left">
+      <path d="M 116 182 L 95 260 L 130 295" stroke="#163172" stroke-width="20" stroke-linecap="round" fill="none"/>
+      <!-- Hand holding edge of tablet -->
+      <circle cx="132" cy="298" r="8" fill="url(#ethan-skin-grad)"/>
+    </g>
+
+    <!-- Holographic Diagnostic Tablet -->
+    <g id="ethan-tablet" transform="translate(110, 240)">
+      <!-- Glass tablet base -->
+      <rect x="0" y="0" width="105" height="75" rx="6" fill="url(#tablet-holo-grad)" stroke="#00e5ff" stroke-width="1.8" filter="drop-shadow(0 0 8px #00e5ff88)"/>
+      <!-- Tablet HUD Content -->
+      <text x="8" y="14" fill="#ffffff" font-size="7" font-family="monospace" font-weight="bold">AQUACARD TELEMETRY</text>
+      <text x="8" y="26" fill="#00e5ff" font-size="6" font-family="monospace">pH: 7.32 | TURB: 0.38</text>
+      <text x="8" y="36" fill="#38bdf8" font-size="6" font-family="monospace">TDS: 52ppm | Q: 4.2L</text>
+      <!-- Mini waveform chart -->
+      <path d="M 8 58 L 22 52 L 35 60 L 50 48 L 68 55 L 85 45 L 98 52" stroke="#00e5ff" stroke-width="1.5" fill="none"/>
+      <circle cx="98" cy="52" r="2.5" fill="#00e676"/>
+      <!-- Diagnostic status pill -->
+      <rect x="8" y="62" width="45" height="8" rx="2" fill="#00e676" opacity="0.3"/>
+      <text x="12" y="68" fill="#00e676" font-size="5" font-family="sans-serif" font-weight="bold">AI: OPTIMAL PATH</text>
+    </g>
+
+    <!-- Right Arm interacting with tablet / gesturing -->
+    <g id="ethan-arm-right">
+      <path id="ethan-arm-right-path" d="M 204 182 L 225 250 L 195 270" stroke="#163172" stroke-width="20" stroke-linecap="round" fill="none"/>
+      <!-- Right hand touching tablet screen -->
+      <circle cx="193" cy="272" r="8" fill="url(#ethan-skin-grad)"/>
+      <circle cx="188" cy="270" r="3" fill="#00e5ff" opacity="0.8"/>
+    </g>
+  </g>
+</svg>

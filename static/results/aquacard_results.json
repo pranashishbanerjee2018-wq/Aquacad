@@ -1,0 +1,108 @@
+{
+  "project": "AQUACARD: THE FUTURE OF INTELLIGENT WATER PURIFICATION",
+  "tagline": "Intelligence That Makes Every Drop Count",
+  "model_type": "Supervised k-Nearest Neighbors (k=5, Standardized Euclidean)",
+  "dataset_size": 480,
+  "train_samples": 336,
+  "test_samples": 144,
+  "classification_accuracy_percent": 95.83,
+  "confusion_matrix": [
+    [
+      43,
+      0,
+      0,
+      0
+    ],
+    [
+      5,
+      29,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      37,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      29
+    ]
+  ],
+  "classes": [
+    "Normal Operating Range",
+    "Elevated Turbidity",
+    "Elevated Dissolved Solids",
+    "Abnormal Sensor Readings"
+  ],
+  "feature_names": [
+    "pH",
+    "Turbidity (NTU)",
+    "TDS (ppm)",
+    "Conductivity (uS/cm)",
+    "Temperature (deg C)",
+    "Flow Rate (L/min)",
+    "Pressure Diff (psi)"
+  ],
+  "per_class_metrics": [
+    {
+      "class_id": 0,
+      "class_name": "Normal Operating Range",
+      "precision": 0.8958,
+      "recall": 1.0,
+      "f1_score": 0.9451,
+      "support": 43
+    },
+    {
+      "class_id": 1,
+      "class_name": "Elevated Turbidity",
+      "precision": 1.0,
+      "recall": 0.8286,
+      "f1_score": 0.9062,
+      "support": 35
+    },
+    {
+      "class_id": 2,
+      "class_name": "Elevated Dissolved Solids",
+      "precision": 0.9737,
+      "recall": 1.0,
+      "f1_score": 0.9867,
+      "support": 37
+    },
+    {
+      "class_id": 3,
+      "class_name": "Abnormal Sensor Readings",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "support": 29
+    }
+  ],
+  "input_water_telemetry": {
+    "pH": 6.85,
+    "Turbidity": 24.2,
+    "TDS": 680.0,
+    "Conductivity": 1050.0,
+    "Temperature": 22.4,
+    "FlowRate": 4.2,
+    "PressureDiff": 5.4
+  },
+  "output_water_telemetry": {
+    "pH": 7.32,
+    "Turbidity": 0.38,
+    "TDS": 52.0,
+    "Conductivity": 88.0,
+    "Temperature": 22.1,
+    "FlowRate": 3.8,
+    "PressureDiff": 2.1
+  },
+  "purification_removal_efficiency": {
+    "turbidity_reduction_percent": 98.43,
+    "tds_reduction_percent": 92.35,
+    "conductivity_reduction_percent": 91.62
+  },
+  "scientific_disclaimer": "Academic conceptual prototype and simulation. Sensor readings provide process indicators only and does not replace certified laboratory microbiological and chemical compliance testing."
+}
